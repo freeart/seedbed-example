@@ -1,0 +1,72 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "Referrals model for ResultDevelopment",
+		"version": "1.0.0",
+		"title": "REFERRALS MODEL"
+	},
+	"-host": "referrals.lv",
+	"host": "localhost:8080",
+	"basePath": "/v1/referrals",
+	"tags": [
+		{
+			"name": "referrals",
+			"description": "Operations about referrals"
+		}
+	],
+	"schemes": [
+		"http"
+	],
+	"paths": {
+		"/": {
+			"get": {
+				"tags": [
+					"referrals"
+				],
+				"summary": "REST for referrals",
+				"description": "This can only be done by the logged in user.",
+				"operationId": "getListReferrals",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+
+				],
+				"responses": {
+					"200": {
+						"description": "Hypermedia HATEOAS collection",
+						"schema": {
+							"$ref": "#/definitions/Collection"
+						}
+					},
+					"default": {
+						"description": "some error"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"Collection": {
+			"description": "Hypermedia HATEOAS collection",
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id"
+			]
+		},
+		"Record": {
+			"description": "Hypermedia HATEOAS record",
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
